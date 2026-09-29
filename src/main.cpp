@@ -31,7 +31,7 @@ void handleInput(sf::Window& window, bool& shouldQuit) {
         //  with different alternate tween functions.
         //  Functions can be from lecture or from https://easings.net/#
         // ====== ====== ======
-        if (const auto* key = event->getIf<sf::Event::KeyPressed>()) {
+        if (const auto *key = event->getIf<sf::Event::KeyPressed>()) {
             switch (key->code) {
 
                 //global tween
@@ -140,8 +140,8 @@ void render(sf::RenderWindow& window) {
     window.draw(x_axis);
     window.draw(y_axis);
 
-    for (int i = 0; i <= 800; i++) {
-        float t = i / 800.0f;
+    for (int i = 0; i <= WINDOW_WIDTH; i++) {
+        float t = i / WINDOW_WIDTH;
         float y = tween(0, 1, t);
         sf::CircleShape point(3);
         point.setPosition({margin_side + t * graph_size_x, margin_bot - y * graph_size_y});
